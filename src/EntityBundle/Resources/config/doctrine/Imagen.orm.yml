@@ -1,0 +1,24 @@
+EntityBundle\Entity\Imagen:
+    type: entity
+    table: imagenes
+    repositoryClass: EntityBundle\Repository\ImagenRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        url:
+            type: string
+            length: 255
+            
+    manyToOne:
+        ejercicio:
+            targetEntity: Ejercicio
+            inversedBy: imagen
+            joinColumn:
+                name: id_ejercicio
+                referencedColumnName: id
+        
+    lifecycleCallbacks: {  }

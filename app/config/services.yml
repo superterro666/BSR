@@ -1,0 +1,41 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    
+    
+    generate.login.service:
+         class: AppBundle\Services\GeneratePasswordService
+         arguments: [ "@service_container", "8", "8" ]
+         
+    error.service:
+        class: AppBundle\Services\ErrorsService
+        arguments: ["@service_container"]
+        
+    app.mail.service:
+        class: AppBundle\Services\MailingService
+        arguments: ["@mailer"]
+    
+        
+    file.task.service:
+         class: AppBundle\Services\FileTaskService
+         arguments: ["@service_container"]
+         
+    app.api.service:
+         class: AppBundle\Services\ApiServices
+         arguments: ["null"]
+         
+    app.jwt_auth.service:
+         class: AppBundle\Services\JwtAuthService
+         arguments: ["@doctrine.orm.entity_manager"]
+         
+    app.api.simpleimage:
+         class: AppBundle\Services\SimpleImageService
+         arguments: ["null"]
+    
+  
+         
+
+    

@@ -1,0 +1,7 @@
+app_bundle_auth:
+    resource: "@AppBundle/Resources/config/routing/auth.yml"
+    prefix: /
+    
+app_bundle_registro:
+    resource: "@AppBundle/Resources/config/routing/registro.yml"
+    prefix: /

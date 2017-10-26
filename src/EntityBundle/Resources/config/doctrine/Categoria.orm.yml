@@ -1,0 +1,29 @@
+EntityBundle\Entity\Categoria:
+    type: entity
+    table: categorias
+    repositoryClass: EntityBundle\Repository\CategoriaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+            
+    oneToOne:
+        ejercicio:
+            targetEntity: Ejercicio
+            mappedBy: categoria
+                        
+        tipo:
+            targetEntity: Tipo
+            inversedBy: categoria
+            joinColumn:
+                name: id_tipo
+                referencedColumnName: id
+
+                
+    lifecycleCallbacks: {  }

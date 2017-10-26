@@ -1,0 +1,28 @@
+security:
+# En el caso que los usuarios tengan la contraseÃ±a cifrada configuramos los encoders para la entidad en la que estÃ©n los usuarios
+    encoders:
+        EntityBundle\Entity\Registro:
+            algorithm: bcrypt
+            cost: 4
+# En providers le indicamos que los usuarios van a salir de la base de datos y el username serÃ¡ email
+    providers:
+        our_db_provider:
+            entity:
+                class: EntityBundle:Registro
+                property: user
+ 
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+ 
+# Configuramos el firewall main para indicarle el provider, la login_path, login_check y el path del logout
+        main:
+            anonymous: ~
+            provider: our_db_provider
+            form_login:
+              login_path: /login
+              check_path: /login_check
+            logout:
+              path: logout
+              target: /

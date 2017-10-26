@@ -1,0 +1,9 @@
+check_token:
+    path: /checktoken/{token}
+    defaults: { _controller: AppBundle:Auth:checkToken, token:null }
+    methods: [GET]
+    
+login:
+    path: /login
+    defaults: { _controller: AppBundle:Auth:login }
+    methods: [POST]

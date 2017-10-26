@@ -1,0 +1,32 @@
+EntityBundle\Entity\Ejercicio:
+    type: entity
+    table: ejercicios
+    repositoryClass: EntityBundle\Repository\EjercicioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+            
+    oneToOne:
+        categoria:
+            targetEntity: Categoria
+            inversedBy: ejercicio
+            joinColumn:
+                name: id_categoria
+                referencedColumnName: id
+        
+    oneToMany:
+        imagen:
+            targetEntity: Imagen
+            mappedBy: ejercicio
+            
+            
+    lifecycleCallbacks: {  }

@@ -1,0 +1,41 @@
+EntityBundle\Entity\Registro:
+    type: entity
+    table: registros
+    repositoryClass: EntityBundle\Repository\RegistroRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        user:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        sha:
+            type: string
+            length: 255
+        fechaRegistro:
+            type: datetime
+            column: fecha_registro
+        role:
+            type: string
+            length: '50'
+            
+        estado:
+            type: boolean
+        
+        status_code:
+            type: string
+            length: '255'
+            
+        activate_date:
+            type: datetime
+        
+        
+            
+            
+    lifecycleCallbacks: {  }

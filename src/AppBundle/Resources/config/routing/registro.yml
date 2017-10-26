@@ -1,0 +1,28 @@
+set_user:
+    path: /set/user
+    defaults: { _controller: AppBundle:Registro:setUser }
+    methods: [POST]
+    
+update_user:
+    path: /update/user
+    defaults: { _controller: AppBundle:Registro:updateUser }
+    
+delete_user:
+    path: /delete/user/{id}{token}
+    defaults: { _controller: AppBundle:Registro:deleteUser, id:null, token:null }
+
+view_user:
+    path: /view/user/{id}/{token}
+    defaults: { _controller: AppBundle:Registro:viewUser, id:null, token:null }
+
+views_users:
+    path:   /views/users
+    defaults: { _controller: AppBundle:Registro:viewsUsers }
+    
+activate_acount:
+    path: /activate/acount/{id}/{code}
+    defaults: { _controller: AppBundle:Registro:activateAcount, id:null, code:null }
+    
+user_exist:
+    path: /user/exist/{user}
+    defaults: { _controller: AppBundle:Registro:userExist, user:null }
