@@ -21,7 +21,7 @@ class JwtAuthService {
 
     public function authUserService($user) {
 
-        $user = $this->manager->getRepository("EntityBundle:Registro")->findOneBy(array("user" => $user));
+        $user = $this->manager->getRepository("EntityBundle:Registro")->findOneBy(array("user" => $user, "estado"=>1));
         if ($user)
             return $user;
         return null;
@@ -35,7 +35,7 @@ class JwtAuthService {
             "jti" => $user->getId(),
             "iat" => time(),
             "exp" => time() + (7 * 24 * 60 * 60),
-            "id" => $user->getId(),
+            "id" => $user->getSha(),
             "user" => $user->getUser(),
             "role" => $user->getRole()
         );
