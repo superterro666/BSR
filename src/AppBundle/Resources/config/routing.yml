@@ -5,3 +5,8 @@ app_bundle_auth:
 app_bundle_registro:
     resource: "@AppBundle/Resources/config/routing/registro.yml"
     prefix: /
+    
+app_bundle_ejercicio:
+    resource: "@AppBundle/Resources/config/routing/ejercicio.yml"
+    prefix: /
+    

@@ -1,0 +1,27 @@
+set_ejercicio:
+    path: /set/ejercicio
+    defaults: { _controller: AppBundle:Ejercicio:setEjercicio }
+    methods: [POST]
+
+view_ejercicio:
+    path:   /view/ejercicio/{token}/{id}
+    defaults: {_controller: AppBundle;Ejercicio:viewEjercicio, token:null, id:null}
+    methods: [GET]
+
+views_ejercicios:
+    path:   /views/ejercicios/{token}
+    defaults: { _controller: AppBundle:Ejercicio:viewsEjercicios, token:null }
+    methods: [GET]
+
+update_ejercicio:
+    path:   /update/ejercicio
+    defaults: { _controller: AppBundle:Ejercicio:updateEjercicio }
+    methods: [PUT]
+
+delete_ejercicio:
+    path:   /delete/ejercicio
+    defaults: { _controller: AppBundle:Ejercicio:deleteEjercicio }
+    methods: [DELETE]
+    
+  
+    

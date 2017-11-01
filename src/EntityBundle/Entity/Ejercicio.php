@@ -155,4 +155,33 @@ class Ejercicio
     {
         return $this->categoria;
     }
+    /**
+     * @var integer
+     */
+    private $max;
+
+
+    /**
+     * Set max
+     *
+     * @param integer $max
+     *
+     * @return Ejercicio
+     */
+    public function setMax($max)
+    {
+        $this->max = $max;
+
+        return $this;
+    }
+
+    /**
+     * Get max
+     *
+     * @return integer
+     */
+    public function getMax()
+    {
+        return $this->max;
+    }
 }

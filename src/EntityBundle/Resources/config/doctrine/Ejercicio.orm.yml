@@ -15,6 +15,9 @@ EntityBundle\Entity\Ejercicio:
         descripcion:
             type: text
             
+        max:
+            type: integer
+            
     oneToOne:
         categoria:
             targetEntity: Categoria
