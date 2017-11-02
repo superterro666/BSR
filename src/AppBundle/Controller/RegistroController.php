@@ -89,8 +89,19 @@ class RegistroController extends Controller {
 
                         $em->persist($registro);
                         $em->flush();
-
-                        return new JsonResponse($error->success());
+                        
+                        $identity = array(
+                        "iss" => "json",
+                        "sub" => "terro",
+                        "jti" => $registro->getId(),
+                        "iat" => time(),
+                        "exp" => time() + (7 * 24 * 60 * 60),
+                        "id" => $registro->getSha(),
+                        "user" => $registro->getUser(),
+                        "role" => $registro->getRole()
+                    );
+                        
+                      return new JsonResponse(array('code'=>200,'user' => $identity));
                     }
 
                     return new JsonResponse($error->dataError($json));
